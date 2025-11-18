@@ -87,7 +87,7 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
             }//valida que el stock ingresado sea un entero
             if (!Validaciones.EsEntero(txtStock.Text))
             {
-                MessageBox.Show("El stock del producto debe ser un valor entero.", "Error",
+                MessageBox.Show("el stock del producto debe ser un valor entero.", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtStock.Focus();
                 return;
