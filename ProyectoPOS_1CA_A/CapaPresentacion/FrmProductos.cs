@@ -19,6 +19,20 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
         }
         //Creacion de una lista estatica que simulara la DB
         public static List<Producto> listaProductos = new List<Producto>();
+        private void DeshabilitarBotones()
+        {
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnLimpiar.Enabled = false;
+            btnNuevo.Enabled = true;
+        }
+        private void HabilitarBotones()
+        {
+            btnNuevo.Enabled = false;
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnLimpiar.Enabled = true;
+        }
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -27,6 +41,7 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
+            DeshabilitarBotones(); //al iniciar, no esten activos
             //Cargar los datos iniciales
             if (!listaProductos.Any())
             {// cada vez que se cargue el formulario, si la lista esta vacia,
@@ -136,6 +151,9 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
             txtPrecio.Text = dgvProductos.CurrentRow.Cells["Precio"].Value.ToString();
             txtStock.Text = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
             chkEstado.Checked = (bool)dgvProductos.CurrentRow.Cells["Estado"].Value;
+
+            //Habilitar los botones de editar y eliminar
+            HabilitarBotones();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -160,6 +178,7 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
                 listaProductos.Remove(prod);//con remove elimino el producto de la lista
                 RefrescarGrid();//refrescar el datagridview
                 LimpiarCampos();//limpiar los controles
+                DeshabilitarBotones();
             }
         }
         //Evento para editar un producto
@@ -213,6 +232,7 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             RefrescarGrid();//refrescar el datagridview
             LimpiarCampos();//limpiar los controles
+            DeshabilitarBotones();
         }
     }
 }
