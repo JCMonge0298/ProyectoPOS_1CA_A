@@ -19,13 +19,6 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
         }
         //Creacion de una lista estatica que simulara la DB
         public static List<Producto> listaProductos = new List<Producto>();
-        private void DeshabilitarBotones()
-        {
-            btnEditar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnLimpiar.Enabled = false;
-            btnNuevo.Enabled = true;
-        }
         private void HabilitarBotones()
         {
             btnNuevo.Enabled = false;
@@ -33,6 +26,15 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
             btnEliminar.Enabled = true;
             btnLimpiar.Enabled = true;
         }
+        
+        private void DeshabilitarBotones()
+        {
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnLimpiar.Enabled = false;
+            btnNuevo.Enabled = true;
+        }
+        
 
         private void label4_Click(object sender, EventArgs e)
         {

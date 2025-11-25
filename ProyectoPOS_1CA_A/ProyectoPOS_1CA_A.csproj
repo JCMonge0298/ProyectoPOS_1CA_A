@@ -46,13 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaDatos\ClienteDAL.cs" />
+    <Compile Include="CapaDatos\Conexion.cs" />
+    <Compile Include="CapaEntidades\Cliente.cs" />
     <Compile Include="CapaEntidades\Producto.cs" />
     <Compile Include="CapaEntidades\Validaciones.cs" />
+    <Compile Include="CapaNegocio\ClienteBLL.cs" />
     <Compile Include="CapaPresentacion\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CapaPresentacion\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\FrmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\FrmCliente.Designer.cs">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="CapaPresentacion\FrmProductos.cs">
       <SubType>Form</SubType>
@@ -64,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CapaPresentacion\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
@@ -92,8 +105,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CapaDatos\" />
-    <Folder Include="CapaNegocio\" />
     <Folder Include="Recursos\" />
   </ItemGroup>
   <ItemGroup>
