@@ -236,5 +236,10 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
             LimpiarCampos();//limpiar los controles
             DeshabilitarBotones();
         }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
